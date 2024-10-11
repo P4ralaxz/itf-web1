@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="title">
-        <h1 id="title">My Melody Phone Book</h1>
+        <h1 id="title" onclick="goProfile()">Nattawut Thiprat 67070053</h1>
     </div>
     <div class="avatar">
         <div id="profile"style="height: 183px; width: 183px; background-image: url(https://orig00.deviantart.net/ec9e/f/2013/252/c/7/kuroro_lucifer__hunter_x_hunter__by_dhax29-d6lqe3s.jpg); border-radius: 100%; background-size: cover; position: relative; background-position: center;">
@@ -17,11 +17,11 @@
     </div>
     <div class="user">
         <label for="">Set Username</label>
-        <input type="text" placeholder="Enter Ur Username" id="input"><button onclick="setUsername()">Set</button>
+        <input type="text" placeholder="Enter Ur Username" id="username_input"><button onclick="setUsername()">Set</button>
     </div>
     <div class="profile">
         <label for="">Set Profile Pic</label>
-        <input type="text" placeholder="Enter Ur Profile Link" id="profile_input"><button onclick="setimage()">Set</button>
+        <input type="text" placeholder="Enter Ur Profile Img Link" id="profile_input"><button onclick="setimage()">Set</button>
     </div>
     <div class="phone">
         <h2>Phone number list</h2>
@@ -29,38 +29,60 @@
     <div class="phone_input">
         <input type="text" placeholder="Name" id="Name_input">
         <input type="text" placeholder="Tel" id="Tel_input">
-        <button onclick="addPara()">add</button>
+        <button onclick="addTable()">add</button>
         <button onclick="saveCSV()">export</button>
     </div>
     <div class = "parent" id="parent">
-        <table style="width:40%">
+        <table id="phoneTable">
             <tr>
-              <td>Emil</td>
-              <td>Tobias</td>
-              <td>Linus</td>
+              <th>No.</th>
+              <th>Name</th>
+              <th>Phonenumber</th>
             </tr>
           </table>
     </div>
 
     <script>
         const username = document.getElementById("title");
-        const userinput = document.getElementById("userinput");
         const profile = document.getElementById("profile");
+        let count = 0;
+        let table = document.getElementById("phoneTable");
+        let phonenumber = [];
 
         function setUsername(){
- 
-            username.textContent = userinput.value + "Phone Book";
+            username.textContent = username_input.value;
+            console.log(userinput.value);
         };
         function setimage(){
             profile.style.backgroundImage = "url("+ profile_input.value+ ")";
             console.log(profile_input.input)
         };
-        function addPara(){
-            const a = document.createElementById("p");
-            a.textContent = "hi";
-            a.appendChild(node);
-            const parent = getElementById("parent");
-            parent.appendChild(a);
+        function addTable() {
+            count += 1;
+            const row = document.createElement("tr");
+            const cellNo = document.createElement("td");
+            const cellName = document.createElement("td");
+            const cellTel = document.createElement("td");
+
+            cellNo.textContent = count;
+            cellName.textContent = Name_input.value;
+            cellTel.textContent = Tel_input.value;
+
+            row.appendChild(cellNo);
+            row.appendChild(cellName);
+            row.appendChild(cellTel);
+
+            table.appendChild(row);
+
+            let arr = [];
+            arr.push(count);
+            arr.push(Name_input.value);
+            arr.push(Tel_input.value);
+
+            phonenumber.push(arr);
+
+            Name_input.value = "";
+            Tel_input.value = "";
         };
         function saveCSV() {
             const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
@@ -74,6 +96,13 @@
             link.click();
             document.body.removeChild(link);
         };
+        function mOver(obj) {
+            obj.innerHTML = username
+        };
+        function goProfile(){
+            location.href = "https://www.instagram.com/paralaxz_z/"
+        }
+        
     </script>
 </body>
 </html>

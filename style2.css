@@ -3,6 +3,15 @@
     justify-content: center;
     margin-top: 10px;
 }
+.title h1{
+    color: black;
+    font-weight: bolder;
+}
+.title h1:hover{
+    color: blue;
+    font-weight: bolder;
+    text-decoration:underline;
+}
 .avatar{
     display: flex;
     justify-content: center;
@@ -21,7 +30,7 @@
 .user button{
     margin-left:2%;
     border: 1px solid blue;
-    border-radius: 10%;
+    border-radius: 25px;
     color: white;
     background-color: blue;
     width: 3%;
@@ -40,7 +49,7 @@
 .profile button{
     margin-left:2%;
     border: 1px solid blue;
-    border-radius: 10%;
+    border-radius: 15px;
     color: white;
     background-color: blue;
     width: 3%;
@@ -60,11 +69,13 @@
     border-radius: 5px;
     border: 1px solid white;
     background-color: rgb(197, 196, 196);
+    width: auto;
+    height: 25px;
 }
 .phone_input button{
     margin-left:2%;
     border: 1px solid blue;
-    border-radius: 10%;
+    border-radius: 15px;
     color: white;
     background-color: blue;
     width: 4%;
@@ -73,4 +84,22 @@
     display: flex;
     justify-content: center;
     margin-top: 1%;
+}
+.parent table{
+    width: 1000px;
+    border-radius: 10px;
+    display: table-column-group;
+}
+
+.parent th{
+    width: 300px;
+    height: 30px;
+    border: 3px solid rgb(196, 196, 196);
+    background-color: rgb(196, 196, 196);
+}
+.parent td{
+    width: 300px;
+    height: 30px;
+    padding-left: 150px;
+    background-color: white;
 }
