@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="title">
+        <h1 id="title">My Melody Phone Book</h1>
+    </div>
+    <div class="avatar">
+        <div id="profile"style="height: 183px; width: 183px; background-image: url(https://orig00.deviantart.net/ec9e/f/2013/252/c/7/kuroro_lucifer__hunter_x_hunter__by_dhax29-d6lqe3s.jpg); border-radius: 100%; background-size: cover; position: relative; background-position: center;">
+            <div style="height: 30px; width: 30px; background-color: red; border-radius: 100%; display: flex; justify-content: center; align-items: center; position: absolute; bottom: 0; right: 12px;"><p>1</p></div>
+        </div>
+    </div>
+    <div class="user">
+        <label for="">Set Username</label>
+        <input type="text" placeholder="Enter Ur Username" id="input"><button onclick="setUsername()">Set</button>
+    </div>
+    <div class="profile">
+        <label for="">Set Profile Pic</label>
+        <input type="text" placeholder="Enter Ur Profile Link" id="profile_input"><button onclick="setimage()">Set</button>
+    </div>
+    <div class="phone">
+        <h2>Phone number list</h2>
+    </div>
+    <div class="phone_input">
+        <input type="text" placeholder="Name" id="Name_input">
+        <input type="text" placeholder="Tel" id="Tel_input">
+        <button onclick="addPara()">add</button>
+        <button onclick="saveCSV()">export</button>
+    </div>
+    <div class = "parent" id="parent">
+        <table style="width:40%">
+            <tr>
+              <td>Emil</td>
+              <td>Tobias</td>
+              <td>Linus</td>
+            </tr>
+          </table>
+    </div>
+
+    <script>
+        const username = document.getElementById("title");
+        const userinput = document.getElementById("userinput");
+        const profile = document.getElementById("profile");
+
+        function setUsername(){
+ 
+            username.textContent = userinput.value + "Phone Book";
+        };
+        function setimage(){
+            profile.style.backgroundImage = "url("+ profile_input.value+ ")";
+            console.log(profile_input.input)
+        };
+        function addPara(){
+            const a = document.createElementById("p");
+            a.textContent = "hi";
+            a.appendChild(node);
+            const parent = getElementById("parent");
+            parent.appendChild(a);
+        };
+        function saveCSV() {
+            const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", "data.csv");
+            link.style.visibility = "hidden";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+    </script>
+</body>
+</html>

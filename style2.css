@@ -1,0 +1,76 @@
+.title{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+}
+.user{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+.user input{
+    margin-left:2%;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgb(197, 196, 196);
+}
+.user button{
+    margin-left:2%;
+    border: 1px solid blue;
+    border-radius: 10%;
+    color: white;
+    background-color: blue;
+    width: 3%;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+.profile input{
+    margin-left:2%;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgb(197, 196, 196);
+}
+.profile button{
+    margin-left:2%;
+    border: 1px solid blue;
+    border-radius: 10%;
+    color: white;
+    background-color: blue;
+    width: 3%;
+}
+.phone{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.phone_input{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.phone_input input{
+    margin-left:2%;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: rgb(197, 196, 196);
+}
+.phone_input button{
+    margin-left:2%;
+    border: 1px solid blue;
+    border-radius: 10%;
+    color: white;
+    background-color: blue;
+    width: 4%;
+}
+.parent{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
